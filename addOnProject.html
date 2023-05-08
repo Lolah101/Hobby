@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salsa - My Hobby💃🏼</title>
+    <style>
+      body {
+        background: linear-gradient(
+          96.2deg,
+          rgb(255, 230, 112) 10.4%,
+          rgb(255, 100, 100) 43.8%,
+          rgb(0, 93, 219) 105.8%
+        );
+      }
+      h1 {
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+      img {
+        max-width: 100%;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        border: 1px solid plum;
+        background: white;
+        font-size: 20px;
+        border-radius: 6px;
+        padding: 10px 15px;
+        transition: all 150ms ease-in-out;
+      }
+      button:hover {
+        background: plum;
+        cursor: pointer;
+      }
+      .container {
+        max-width: 600px;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      footer {
+        text-align: center;
+        margin: 10px 0;
+        font-size: 18px;
+      }
+      .theme-button {
+        font-size: 12px;
+        background: black;
+        color: white;
+        padding: 5 8px;
+      }
+
+      .theme-button:hover {
+        color: black;
+        background: white;
+      }
+      .salsa-intro-picture {
+        border-radius: 10px;
+        transition: transform 150ms ease-in-out, filter 2000ms ease-in;
+      }
+      .salsa-intro-picture:hover {
+        filter: contrast(80%);
+        transform: scale(1.1);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+      }
+      .grid img {
+        width: 100%;
+        border-radius: 8px;
+        aspect-ratio: 5/4;
+        object-fit: cover;
+
+        transition: all 150ms ease-in-out;
+      }
+
+      .grid img:hover {
+        transform: scale(2);
+      }
+      .dark {
+        background: radial-gradient(
+          circle at -8.9% 51.2%,
+          rgb(255, 124, 0) 0%,
+          rgb(255, 124, 0) 15.9%,
+          rgb(255, 163, 77) 15.9%,
+          rgb(255, 163, 77) 24.4%,
+          rgb(19, 30, 37) 24.5%,
+          rgb(19, 30, 37) 66%
+        );
+        color: white;
+      }
+
+      .dark .container {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .dark a {
+        color: plum;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-button">Change theme</button>
+    <div class="container">
+      <h1>💃🏼 What is Salsa ?</h1>
+      <h2>My favorite hobby</h2>
+      <a href="https://en.wikipedia.org/wiki/Salsa_(dance)" target="_blank">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/079/947/original/raymond-teeuw-RwjX3Xb6FO8-unsplash.jpg?1683005388"
+          alt=""
+          class="salsa-intro-picture"
+        />
+      </a>
+      <div class="grid">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/079/950/original/tim-gouw-wU5JYPb663Y-unsplash.jpg?1683009418"
+          alt=""
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/079/945/original/ardian-lumi-6Woj_wozqmA-unsplash.jpg?1683005368"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/079/951/original/frank-rolando-romero-sjP9xrF4JAA-unsplash.jpg?1683009672"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/079/940/original/Salsa2.jpeg?1683004337"
+          alt=""
+        />
+      </div>
+
+      <p>
+        Salsa is a type of music and dance of hispanic origin. Salsa music is
+        based on Cuban music. This is a fusion of musical ideas which originally
+        came from Africa and Spain.[1] During 1965-1975 in New York, musicians
+        of Cuban and Puerto Rican origin combined to produce this Cuban-style
+        music. The music got the label of 'salsa'. No-one really knows how this
+        happened, but everyone recognised how good it was to have a label for
+        it. Over time, salsa bands worked in other influences. For example, in
+        the late 60s Willie Colon developed numbers that made use of Brazilian
+        rhythms. N.Y. radio programmes offered 'salsarengue' as a further
+        combination.
+      </p>
+      <button class="info-button">Learn Salsa</button>
+    </div>
+    <footer>
+      Coded with 💜 by <a href="https://www.shecodes.io/">Matt Delac</a>
+    </footer>
+    <script>
+      function changeTheme() {
+        let body = document.querySelector("body");
+
+        // body.classList.toggle("dark");
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+        } else {
+          body.classList.add("dark");
+        }
+      }
+
+      function userInfo() {
+        let name = prompt("What is your name?");
+        let email = prompt("Please enter your email address");
+        let salsa = prompt("Have you done salsa before?");
+
+        alert(
+          `Thanks ${name}! We'll be in touch soon with more details. Feel free to contact us if you have any questions hello@shecodes.io`
+        );
+      }
+
+      let themeButton = document.querySelector(".theme-button");
+      themeButton.addEventListener("click", changeTheme);
+
+      let infoButton = document.querySelector(".info-button");
+      infoButton.addEventListener("click", userInfo);
+    </script>
+  </body>
+</html>
